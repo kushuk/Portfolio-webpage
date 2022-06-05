@@ -1,0 +1,151 @@
+/* style-portfolio.css */
+:root { 
+  --primary-clr: rgb(58, 27, 110);
+  --secondary-clr: rgb(187, 40, 40);
+  --bg1-clr: rgb(128, 124, 118);
+  --bg2-clr: rgb(190, 235, 197);
+  --titles-clr: rgb(80, 7, 7);
+  --texts-clr: rgb(54, 15, 15);
+}
+
+/*  Default setting for all elements */ 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+   
+
+html {
+    
+    /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+  
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--bg1-clr), whitesmoke;
+  color: var(--primary-clr), black;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 400%;
+  letter-spacing: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2,h3 {
+  font-family: inherit;
+}
+
+.body-container {
+    height: 100%;
+ 
+    display: grid;
+    gap: 1rem;    
+    grid-template-columns: repeat(4, 1fr);
+    
+    grid-template-areas: 
+    "A A A A" 
+    "B B B C"
+    "B B B C"
+    "D D D D";
+    position: relative;
+} 
+
+
+
+
+
+/***** navingation ******/
+#navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  justify-content: right;
+  align-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: yellowgreen;
+
+}
+
+.nav-link {
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: capitalize;
+  border: none;
+  background: transparent;
+  transition: all 0.3s ease 0.2s;
+  -webkit-transition: all 0.3s ease 0.2s;
+  -moz-transition: all 0.3s ease 0.2s;
+  -o-transition: all 0.3s ease 0.2s;
+  cursor: pointer;
+}
+/***** navingation ******/
+
+/***** sections ******/
+
+#welcome-section {
+  height: 100%;
+  font: italic large "Roboto", serif;
+  text-align: center;
+  background-color: aqua;  
+}
+
+#projects {
+  font: 400 bold medium "Montserrat";
+  background-color: rgb(38, 51, 51);
+  display: grid;
+  gap: 20px ;
+  grid-template-rows: 250px 250px;
+  grid-template-columns: 250px 250px;
+}
+
+.project-items {   
+  background-color: aliceblue;    
+}
+
+#aside { 
+  font: 800 italic large "Montserrat";
+}
+
+#footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  justify-content: right;
+  align-content: space-between;
+  background-color: yellowgreen;
+}
+
+.nav {
+  grid-area: A;
+}
+
+.section {
+  grid-area: B;
+}
+
+.aside {
+  grid-area: C;
+}
+.footer {
+  grid-area: D;
+}
+
+
+/***** sections ******/
+
+/***** Media ******/

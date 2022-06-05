@@ -1,0 +1,87 @@
+/* style-portfolio.css */
+:root { 
+  --primary-clr: rgb(58, 27, 110);
+  --secondary-clr: rgb(187, 40, 40);
+  --bg1-clr: rgb(128, 124, 118);
+  --bg2-clr: rgb(190, 235, 197);
+  --titles-clr: rgb(80, 7, 7);
+  --texts-clr: rgb(54, 15, 15);
+}
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+   
+
+html {
+    
+    /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+  
+body {
+  background-color: var(--bg1-clr), whitesmoke;
+  color: var(--primary-clr), black;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+}
+
+.body-container {
+    height: 100vh;
+    width: 100wh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    position: relative;
+} 
+
+
+/***** navingation ******/
+#navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  justify-content: right;
+  align-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: yellowgreen;
+}
+/***** navingation ******/
+
+/***** sections ******/
+#welcome-section {
+  font: italic x-large "Roboto", serif;
+  background-color: aqua;
+}
+
+#projects {
+  font: 400 bold medium "Montserrat";
+  background-color: rgb(38, 51, 51);
+  display: grid;
+  grid-template-areas: 
+  item1, item2
+  item3, item4;
+}
+
+.project-items {
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+   
+}
+
+/***** sections ******/
+
+/***** Media ******/
