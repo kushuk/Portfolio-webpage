@@ -47,11 +47,12 @@ h2,h3 {
 
 .body-container {
     
-    margin: 0 auto;
+    height: 100vh; 
     display: grid;
-    gap: 1rem;    
+    gap: 20px;    
     grid-template-columns: repeat(4, 1fr);
-    
+    grid-template-rows: repeat(4, 250px); 
+       
     grid-template-areas: 
     "A A A A" 
     "B B B C"
@@ -111,13 +112,10 @@ h2,h3 {
   grid-template-columns: 250px 250px;
 }
 
-.project-items {   
+.project-tiles {   
   background-color: aliceblue;    
 }
 
-#aside { 
-  font: 800 italic large "Montserrat";
-}
 
 #footer {
   width: 100%;
@@ -131,17 +129,22 @@ h2,h3 {
 
 .nav {
   grid-area: A;
+  justify-self: end;
 }
 
-.section {
+.content-1 {
   grid-area: B;
+  justify-content: center;
+  border: thin dotted 5px;
 }
 
-.aside {
+.content-2 {
   grid-area: C;
+  justify-self: start;
 }
 .footer {
   grid-area: D;
+  justify-content: center;
 }
 
 
