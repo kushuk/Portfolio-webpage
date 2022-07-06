@@ -29,7 +29,7 @@ html {
   
 body {
   min-height: 100vh;
-  width: auto;
+  width: 100vw;
   background-color: var(--bg1-clr), whitesmoke;
   color: var(--primary-clr), black;
   font-family: 'Montserrat', 'Roboto', sans-serif;
@@ -37,7 +37,7 @@ body {
 
 h1 {
   font-size: 400%;
-  letter-spacing: 1em;
+  letter-spacing: 0.4em;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -47,16 +47,17 @@ h2,h3 {
 
 .body-container {
     
-    height: 100vh; 
+    min-height: 100vh; 
+    width: 100%;
     display: grid;
     gap: 20px;    
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 250px); 
-       
+    grid-template-rows: repeat(4, 1fr); 
+    
     grid-template-areas: 
     "A A A A" 
-    "B B B C"
-    "B B B C"
+    "B B B B"
+    "C C C C"
     "D D D D";
     position: relative;
 } 
@@ -81,7 +82,7 @@ h2,h3 {
 }
 
 .nav-link {
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: 900;
   text-transform: capitalize;
   border: none;
@@ -98,27 +99,40 @@ h2,h3 {
 
 #welcome-section {
   height: 100%;
+  width: 100%;
+  display: block;
   font: italic large "Roboto", serif;
   text-align: center;
   background-color: aqua;  
+  position: relative;
 }
 
 #projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
   font: 400 bold medium "Montserrat";
   background-color: rgb(38, 51, 51);
-  display: grid;
-  gap: 20px ;
-  grid-template-rows: 250px 250px;
-  grid-template-columns: 250px 250px;
+  
 }
 
 .project-tiles {   
-  background-color: aliceblue;    
+  /* display: grid;
+  gap: 10px ;
+  grid-template-rows: 350px 350px;
+  grid-template-columns:  350px 350px; 
+  grid-column: span ; 
+  grid-row: span ;
+  position: relative; */
+  background-color: aliceblue;  
+  
 }
 
 
 #footer {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex: 1 1 auto;
@@ -129,22 +143,30 @@ h2,h3 {
 
 .nav {
   grid-area: A;
-  justify-self: end;
+  justify-self: flex-start;
 }
 
 .content-1 {
+  height: 100%;
+  width: 100%;
   grid-area: B;
-  justify-content: center;
-  border: thin dotted 5px;
+  
+
+  
 }
 
-.content-2 {
+.content-2 {  
+  height: 100%;
+  width: auto;
   grid-area: C;
-  justify-self: start;
+  display: flex;  
+  
 }
+
 .footer {
+  
   grid-area: D;
-  justify-content: center;
+  
 }
 
 
