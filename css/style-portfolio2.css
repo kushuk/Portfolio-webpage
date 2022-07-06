@@ -1,11 +1,11 @@
 /* style-portfolio.css */
 :root { 
-  --primary-clr: rgb(58, 27, 110);
-  --secondary-clr: rgb(187, 40, 40);
+  --primary-clr: rgb(77, 70, 90);
+  --secondary-clr: rgb(110, 67, 67);
   --bg1-clr: rgb(128, 124, 118);
-  --bg2-clr: rgb(190, 235, 197);
+  --bg2-clr: rgb(31, 173, 52);
   --titles-clr: rgb(80, 7, 7);
-  --texts-clr: rgb(54, 15, 15);
+  --texts-clr: rgb(17, 2, 2);
 }
 
 /*  Default setting for all elements */ 
@@ -29,15 +29,16 @@ html {
   
 body {
   min-height: 100vh;
-  width: 100vw;
-  background-color: var(--bg1-clr), whitesmoke;
+  max-width: 100vw;
+  background-color: var(--bg1-clr);
   color: var(--primary-clr), black;
   font-family: 'Montserrat', 'Roboto', sans-serif;
+  position: relative;
 }
 
 h1 {
   font-size: 400%;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.4rem;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -47,30 +48,12 @@ h2,h3 {
 
 
 
-.body-container {
-    
-    min-height: 100vh; 
-    width: 100%;
-    display: grid;
-    gap: 20px;    
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr); 
-    
-    grid-template-areas: 
-    "A A A A" 
-    "B B B B"
-    "C C C C"
-    "D D D D";
-    position: relative;
-} 
-
-
-
-
 
 /***** navingation ******/
-#navbar {
+nav#navbar {
+  height: 30%;
   width: 100%;
+  padding: 1rem;
   display: flex;
   flex-direction: row;
   flex: 1 1 auto;
@@ -79,12 +62,17 @@ h2,h3 {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: yellowgreen;
+  z-index: 1;
+  background-color: var(--bg2-clr);
 
 }
 
-.nav-link {
-  font-size: 1.5em;
+nav#navbar ul {
+  list-style: none;
+}
+
+nav#navbar .nav-link {
+  font-size: 2rem;
   font-weight: 900;
   text-transform: capitalize;
   border: none;
@@ -94,75 +82,96 @@ h2,h3 {
   -moz-transition: all 0.3s ease 0.2s;
   -o-transition: all 0.3s ease 0.2s;
   cursor: pointer;
+  
 }
 /***** navingation ******/
 
 /***** sections ******/
 
-#welcome-section {
-  height: 100%;
-  width: 100%;
-  display: block;
+section#welcome-section { 
+  min-height: 100vh;
+  max-width: 100%;
   font: italic large "Roboto", serif;
   text-align: center;
-  background-color: aqua;  
-  position: relative;
+  position: relative;  
 }
 
-#projects {
+section#projects {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
   font: 400 bold medium "Montserrat";
-  background-color: rgb(38, 51, 51);
-  
+  background-color: var(--secondary-clr);
 }
 
 
-.project-tiles {   
-  display: grid;
-  gap: 10px ;
-  grid-template-rows: 350px 350px;
-  grid-template-columns:  350px 350px; 
+section.project-tiles {   
+  
+   gap: 10px ;
+  grid-template-rows: 300px 300px;
+  grid-template-columns:  300px 300px; 
   grid-column: span ; 
   grid-row: span ;
   position: relative; 
-  background-color: aliceblue;  
+  border: thin 10px solid green; 
+    
   
 }
 
 
-#footer {
-  width: 100%;
-  height: auto;
+footer#footer {  
   display: flex;
   flex-direction: row;
   flex: 1 1 auto;
   justify-content: right;
   align-content: space-between;
-  background-color: yellowgreen;
+  background-color: var(--bg2-clr);
 }
+
+.body-container {  
+  min-height: 100vh; 
+  width: 100%;
+  display: grid;  
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  align-content: stretch;
+    
+    grid-template-areas: 
+    "A A A A" 
+    "B B B B"
+    "C C C C"
+    "D D D D";
+    position: relative;
+} 
+
+ 
+
 
 .nav {
+  width: 100%;
   grid-area: A;
-  justify-self: flex-start;
+  justify-items: center;
+  align-items: baseline;
+   
 }
 
-.content-1 {
-  height: 100%;
+.content-1 {  
   width: 100%;
+  height: 100%;
   grid-area: B;
-  
-
-  
+  justify-items: center;
+  align-items: stretch;
 }
 
 .content-2 {  
   height: 100%;
-  width: auto;
+  width: 100%;
   grid-area: C;
-  display: flex;  
+  justify-items: center;
+  align-items: stretch;
+    
   
 }
 
