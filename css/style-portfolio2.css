@@ -68,7 +68,6 @@ nav#navbar {
   left: 0;
   z-index: 1;
   background-color: var(--bg2-clr);
-
 }
 
 nav#navbar ul {
@@ -88,8 +87,7 @@ nav#navbar .nav-link {
    -webkit-transition: all 0.3s ease 0.2s;
   -moz-transition: all 0.3s ease 0.2s;
   -o-transition: all 0.3s ease 0.2s; */
-  cursor: pointer;
-  
+  cursor: pointer;  
 }
 
 /***** navingation ******/
@@ -114,9 +112,9 @@ section#projects {
   width: 100%;  
   padding: 2rem;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  flex: 1 1 auto;
   flex-wrap: wrap;
   font: 400 bold medium "Montserrat";
   background-color: var(--secondary-clr);
@@ -217,6 +215,7 @@ footer#footer {
 /***** Media ******/
 @media only screen
 and (max-width : 480px) { 
+
   h1 {
     padding: 1rem;
     font-size: 400%;
@@ -236,11 +235,25 @@ and (max-width : 480px) {
   nav#navbar {  
   padding: 1rem;
   display: flex;
-  flex-direction: row;
   flex: 1 1 auto;
   justify-content: flex-start;
   align-content: space-between;
-}
+  }
+
+  section#projects { 
+    height: 100%;   
+    width: 100%;  
+    padding: 1rem;
+    display: flex;
+    flex-direction: columns;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font:200 bold medium "Montserrat";
+    background-color: var(--secondary-clr);
+  }
+
 }
 
 /* This my plain Porfoilo web page */
