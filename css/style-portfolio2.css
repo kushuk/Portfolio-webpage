@@ -18,12 +18,12 @@
    
 
 html {    
-    /* Set font size for easy rem calculations
-     * default document font size = 16px, 1rem = 16px, 100% = 16px
-     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
-    */
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  /* Set font size for easy rem calculations
+    * default document font size = 16px, 1rem = 16px, 100% = 16px
+    * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
   
@@ -37,12 +37,16 @@ body {
 }
 
 h1 {
-  font-size: 400%;
-  letter-spacing: 0.4rem;
+  padding: 1rem;
+  font-size: 500%;
+  letter-spacing: 0.2rem;
   font-family: 'Roboto', sans-serif;
 }
 
-h2,h3 {
+h2 {
+  padding: 1rem;
+  font-size: 300%;
+  letter-spacing: 0.2rem;
   font-family: inherit;
 }
 
@@ -57,7 +61,7 @@ nav#navbar {
   display: flex;
   flex-direction: row;
   flex: 1 1 auto;
-  justify-content: right;
+  justify-content: flex-end;
   align-content: space-between;
   position: fixed;
   top: 0;
@@ -69,9 +73,11 @@ nav#navbar {
 
 nav#navbar ul {
   list-style: none;
+  
 }
 
 nav#navbar .nav-link {
+  margin: 1.5rem;
   font-size: 2rem;
   font-weight: 900;
   text-transform: capitalize;
@@ -84,19 +90,38 @@ nav#navbar .nav-link {
   cursor: pointer;
   
 }
+
+.nav-link::hover {
+  font-size: 2rem;
+  background: var(--primary-clr);
+}
+
+.nav-link::hover {
+  transition: background 0.3s ease-out;
+  transform: translateX(2px);
+}
+
 /***** navingation ******/
 
 /***** sections ******/
 
 section#welcome-section { 
   min-height: 100vh;
-  max-width: 100%;
+  width: 100%;
+  padding: 2rem;
   font: italic large "Roboto", serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: flex-end;
   position: relative;  
 }
 
 section#projects {
+  height: auto;
+  width: 100%;  
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -107,81 +132,121 @@ section#projects {
 }
 
 
-section.project-tiles {   
+section#projects .project-tiles {
+  padding: 2rem;
+  display: grid;
+  gap: 20px ;
+  grid-template-columns:  200px 200px; 
+  grid-template-rows: 200px 200px;
   
-   gap: 10px ;
-  grid-template-rows: 300px 300px;
-  grid-template-columns:  300px 300px; 
-  grid-column: span ; 
-  grid-row: span ;
+  grid-auto-rows: auto;
   position: relative; 
-  border: thin 10px solid green; 
-    
+  border: 10px solid green;    
   
 }
 
+section#contact {
+  height: 80%;
+  width: 100%;
+  font: italic large "Roboto", serif;
+  text-align: center;
+  display: block;
+  position: relative; 
+}
 
-footer#footer {  
+section#contact ul {
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-content: space-around;
+}
+section#contact ul li {
+  list-style: none;  
+}
+
+
+footer#footer {
+  height: 40%;
+  width: 100%;
+  padding: 1rem;
   display: flex;
   flex-direction: row;
   flex: 1 1 auto;
-  justify-content: right;
+  justify-content: flex-end;
   align-content: space-between;
   background-color: var(--bg2-clr);
 }
+
+/*   grid layout */
 
 .body-container {  
   min-height: 100vh; 
   width: 100%;
   display: grid;  
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  align-content: stretch;
-    
-    grid-template-areas: 
+  grid-auto-rows: auto;  
+  align-items: stretch;   
+  grid-template-areas: 
     "A A A A" 
     "B B B B"
-    "C C C C"
-    "D D D D";
-    position: relative;
+    "C C C C" 
+    "D D D D"   
+    "E E E E";
+  position: relative;
 } 
 
- 
-
-
-.nav {
-  width: 100%;
+.nav {  
   grid-area: A;
-  justify-items: center;
-  align-items: baseline;
-   
+  
 }
 
 .content-1 {  
-  width: 100%;
-  height: 100%;
   grid-area: B;
-  justify-items: center;
-  align-items: stretch;
+  
 }
 
 .content-2 {  
-  height: 100%;
-  width: 100%;
-  grid-area: C;
-  justify-items: center;
-  align-items: stretch;
-    
-  
+  grid-area: C;    
+}
+
+.content-3 {  
+  grid-area: D;
 }
 
 .footer {
-  
-  grid-area: D;
-  
+  grid-area: E;    
 }
+/* end grid laout */
 
 
 /***** sections ******/
 
 /***** Media ******/
+@media only screen
+and (max-width : 480px) { 
+  h1 {
+    padding: 1rem;
+    font-size: 400%;
+    letter-spacing: 0.2rem;
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h2 {
+    padding: 1rem;
+    font-size: 200%;
+    letter-spacing: 0.2rem;
+    word-wrap: break-word;
+    font-family: inherit;
+  }
+nav#navbar {  
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+}
